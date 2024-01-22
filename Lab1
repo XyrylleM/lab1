@@ -1,0 +1,115 @@
+liveuser@localhost-live:~/Documents/Firstclass$ cd ~
+liveuser@localhost-live:~$ mkdir Docs
+liveuser@localhost-live:~$ cd Docs
+liveuser@localhost-live:~/Docs$ mkdir Comp123 Comp125 Comp301
+liveuser@localhost-live:~/Docs$ ls 
+Comp123  Comp125  Comp301
+liveuser@localhost-live:~/Docs$ cd Comp301
+liveuser@localhost-live:~/Docs/Comp301$ mkdir301
+bash: mkdir301: command not found...
+liveuser@localhost-live:~/Docs/Comp301127$ mkdir Labs
+liveuser@localhost-live:~/Docs/Comp301$ ls
+Labs
+liveuser@localhost-live:~/Docs/Comp301$ cat > test1.txt
+echo Xyrylle Maputol
+echo Linux is the best Operating System
+liveuser@localhost-live:~/Docs/Comp301$ cd Docs
+bash: cd: Docs: No such file or directory
+liveuser@localhost-live:~/Docs/Comp3011$ cd -
+/home/liveuser/Docs
+liveuser@localhost-live:~/Docs$ cd Comp301
+liveuser@localhost-live:~/Docs/Comp301$ rm test1.txt
+liveuser@localhost-live:~/Docs/Comp301$ cd -
+/home/liveuser/Docs
+liveuser@localhost-live:~/Docs$ cat > test1.txt
+echo Xyrylle Maputol
+echo Linux is the best Operating System
+liveuser@localhost-live:~/Docs$ ls
+Comp123  Comp125  Comp301  test1.txt
+liveuser@localhost-live:~/Docs$ cp test1.txt Comp301
+liveuser@localhost-live:~/Docs$ cd Comp301
+liveuser@localhost-live:~/Docs/Comp301$ ls
+Labs  test1.txt
+liveuser@localhost-live:~/Docs/Comp301$ cp test1.txt Comp123
+liveuser@localhost-live:~/Docs/Comp301$ cp test1.txt Comp125
+liveuser@localhost-live:~/Docs/Comp301$ cd Labs
+liveuser@localhost-live:~/Docs/Comp301/Labs$ ls
+liveuser@localhost-live:~/Docs/Comp301/Labs$ for i in {2..5}; do cp test1.txt ~/Docs/Comp301/Labs/"test{i}.txt"
+> ^C
+liveuser@localhost-live:~/Docs/Comp301/Labs130$ ls
+liveuser@localhost-live:~/Docs/Comp301/Labs$ cd -
+/home/liveuser/Docs/Comp301
+liveuser@localhost-live:~/Docs/Comp301$ ls
+Comp123  Comp125  Labs  test1.txt
+liveuser@localhost-live:~/Docs/Comp301$ cd Labs
+liveuser@localhost-live:~/Docs/Comp301/Labs$ ls
+liveuser@localhost-live:~/Docs/Comp301/Labs$ ^C
+liveuser@localhost-live:~/Docs/Comp301/Labs130$ for i in {2..5}; do cp test1.txt ~/Docs/Comp301/Labs/test"${i}".txt; done
+cp: cannot stat 'test1.txt': No such file or directory
+cp: cannot stat 'test1.txt': No such file or directory
+cp: cannot stat 'test1.txt': No such file or directory
+cp: cannot stat 'test1.txt': No such file or directory
+liveuser@localhost-live:~/Docs/Comp301/Labs1$ cd -
+/home/liveuser/Docs/Comp301
+liveuser@localhost-live:~/Docs/Comp301$ ls
+Comp123  Comp125  Labs  test1.txt
+liveuser@localhost-live:~/Docs/Comp301$ for i in {2..5}; do cp test1.txt ~/Docs/Comp301/Labs/test"${i}".txt;done
+liveuser@localhost-live:~/Docs/Comp301$ ls
+Comp123  Comp125  Labs  test1.txt
+liveuser@localhost-live:~/Docs/Comp301$ cd Labs
+liveuser@localhost-live:~/Docs/Comp301/Labs$ ls
+test2.txt  test3.txt  test4.txt  test5.txt
+liveuser@localhost-live:~/Docs/Comp301/Labs$ mv test5.txt script01.sh
+liveuser@localhost-live:~/Docs/Comp301/Labs$ ls
+script01.sh  test2.txt  test3.txt  test4.txt
+liveuser@localhost-live:~/Docs/Comp301/Labs$ ./script01.sh
+bash: ./script01.sh: Permission denied
+liveuser@localhost-live:~/Docs/Comp301/Labs126$ -l
+bash: -l: command not found...
+liveuser@localhost-live:~/Docs/Comp301/Labs127$ ls -l
+total 16
+-rw-r--r--. 1 liveuser liveuser 61 Jan 22 17:34 script01.sh
+-rw-r--r--. 1 liveuser liveuser 61 Jan 22 17:34 test2.txt
+-rw-r--r--. 1 liveuser liveuser 61 Jan 22 17:34 test3.txt
+-rw-r--r--. 1 liveuser liveuser 61 Jan 22 17:34 test4.txt
+liveuser@localhost-live:~/Docs/Comp301/Labs$ chmod +x script01.sh
+liveuser@localhost-live:~/Docs/Comp301/Labs$ ls -l
+total 16
+-rwxr-xr-x. 1 liveuser liveuser 61 Jan 22 17:34 script01.sh
+-rw-r--r--. 1 liveuser liveuser 61 Jan 22 17:34 test2.txt
+-rw-r--r--. 1 liveuser liveuser 61 Jan 22 17:34 test3.txt
+-rw-r--r--. 1 liveuser liveuser 61 Jan 22 17:34 test4.txt
+liveuser@localhost-live:~/Docs/Comp301/Labs$ ./script01.sh
+Xyrylle Maputol
+Linux is the best Operating System
+liveuser@localhost-live:~/Docs/Comp301/Labs$ cd ~
+liveuser@localhost-live:~$ cd Docs/Comp301/Labs
+liveuser@localhost-live:~/Docs/Comp301/Labs$ ls
+script01.sh  test2.txt  test3.txt  test4.txt
+liveuser@localhost-live:~/Docs/Comp301/Labs$ ls *.txt
+test2.txt  test3.txt  test4.txt
+liveuser@localhost-live:~/Docs/Comp301/Labs$ cd -
+/home/liveuser
+liveuser@localhost-live:~$ pwd
+/home/liveuser
+liveuser@localhost-live:~$ ls
+Desktop  Docs  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+liveuser@localhost-live:~$ cd Docs/Comp301
+liveuser@localhost-live:~/Docs/Comp301$ cp -i  test1.txt ~/Docs/Comp301/Labs
+liveuser@localhost-live:~/Docs/Comp301$ cd Labs
+liveuser@localhost-live:~/Docs/Comp301/Labs$ ls
+script01.sh  test1.txt  test2.txt  test3.txt  test4.txt
+liveuser@localhost-live:~/Docs/Comp301/Labs$ cd ~
+liveuser@localhost-live:~$ cd Docs/Comp301
+liveuser@localhost-live:~/Docs/Comp301$ rm Labs
+rm: cannot remove 'Labs': Is a directory
+liveuser@localhost-live:~/Docs/Comp3011$ rm -r -f Labs
+liveuser@localhost-live:~/Docs/Comp301$ ls
+Comp123  Comp125  test1.txt
+liveuser@localhost-live:~/Docs/Comp301$ cd ~
+liveuser@localhost-live:~$ rm -r -f Docs
+liveuser@localhost-live:~$ ls
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+liveuser@localhost-live:~$ ^C
+liveuser@localhost-live:~130$ 
+New File at / · XyrylleM/lab1
